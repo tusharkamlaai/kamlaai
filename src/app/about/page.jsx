@@ -19,6 +19,7 @@ import {
 } from "react-icons/fi";
 import Image from "next/image";
 import aboutimg from '../assets/about.jpg'
+import Link from 'next/link'
 
 const AboutPage = () => {
   const features = [
@@ -382,7 +383,7 @@ const AboutPage = () => {
             }}
             whileTap={{ scale: 0.98 }}
           >
-            Contact Us
+        <Link href="contact">Contact Us</Link>   
           </motion.button>
         </motion.div>
       </div>

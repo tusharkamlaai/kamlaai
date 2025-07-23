@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FiMail, FiPhone, FiMapPin, FiFacebook, FiTwitter, FiLinkedin, FiInstagram } from 'react-icons/fi';
-
+import Link from 'next/link'
 const Footer = () => {
   const footerVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -29,6 +29,18 @@ const Footer = () => {
       }
     })
   };
+
+
+  const navItems = [
+    { name: "Home", href: "/" },
+    { name: "Features", href: "/features" },
+    { name: "Services", href: "/services" },
+    { name: "About", href: "/about" },
+    { name: "Team", href: "/teams" },
+    { name: "Contact", href: "/contact" },
+    { name: "Career", href: "/career" },
+
+  ];
 
   return (
     <footer className="bg-gradient-to-b from-slate-900 to-slate-800 text-white pt-16 pb-8 px-4 sm:px-8">
@@ -78,7 +90,7 @@ const Footer = () => {
           <motion.div variants={itemVariants} custom={1}>
             <h3 className="text-xl font-bold mb-6">Quick Links</h3>
             <ul className="space-y-3">
-              {['Home', 'Services', 'About Us', 'Our Team', 'Contact'].map((link, i) => (
+              {navItems.map((link, i) => (
                 <motion.li 
                   key={i}
                   custom={i + 1}
@@ -86,9 +98,9 @@ const Footer = () => {
                   whileHover={{ x: 5, color: "#FF00FF" }}
                   transition={{ duration: 0.2 }}
                 >
-                  <a href="#" className="text-gray-300 hover:text-[#FF00FF] transition-colors duration-300">
-                    {link}
-                  </a>
+                  <Link href={link.href} className="text-gray-300 hover:text-[#FF00FF] transition-colors duration-300">
+                    {link.name}
+                  </Link>
                 </motion.li>
               ))}
             </ul>
@@ -104,7 +116,7 @@ const Footer = () => {
                 variants={itemVariants}
               >
                 <FiMapPin className="text-[#FF00FF] mt-1 mr-3 flex-shrink-0" />
-                <span>Dream Colony No.02, Plot No.40, Butibori, Nagpur</span>
+                <span>Dream Colony No.02, Plot No.40, Butibori, Nagpur, 441108</span>
               </motion.div>
             </address>
           </motion.div>
@@ -121,6 +133,16 @@ const Footer = () => {
                 <FiMail className="text-[#FF00FF] mt-1 mr-3 flex-shrink-0" />
                 <a href="mailto:info@kamlaai.com" className="hover:text-[#FF00FF] transition-colors duration-300">
                   info@kamlaai.com
+                </a>
+              </motion.div>
+               <motion.div 
+                className="flex items-start"
+                custom={3.2}
+                variants={itemVariants}
+              >
+                <FiMail className="text-[#FF00FF] mt-1 mr-3 flex-shrink-0" />
+                <a href="mailto:kamlaaiservices@gmail.com" className="hover:text-[#FF00FF] transition-colors duration-300">
+                  info@kamla.co.in
                 </a>
               </motion.div>
               <motion.div 

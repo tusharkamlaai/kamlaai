@@ -3,11 +3,12 @@
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
-import logo1 from "../../app/assets/F5.png";
-import logo2 from "../assets/F6.png";
-import logo3 from "../assets/F7.png";
-import logo4 from "../assets/F8.webp";
+import logo1 from "../../../public/assets/F5.png";
+import logo2 from "../../../public/assets/F6.png";
+import logo3 from "../../../public/assets/F7.png";
+import logo4 from "../../../public/assets/F8.webp";
 import Image from "next/image";
+
 
 const features = [
   {

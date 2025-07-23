@@ -182,7 +182,7 @@ const Contact = () => {
                     value={formData.user_name}
                     onChange={handleInputChange}
                     className={`pl-10 w-full px-4 py-3 rounded-lg border ${errors.user_name ? 'border-red-500' : 'border-gray-300 dark:border-slate-600'} focus:ring-2 focus:ring-[#FF00FF] focus:border-transparent bg-white dark:bg-slate-700 text-gray-900 dark:text-white`}
-                    placeholder="John Doe"
+                    placeholder="Your name"
                   />
                 </div>
                 {errors.user_name && (
@@ -285,7 +285,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-medium text-gray-900 dark:text-white">Support</h4>
-                    <p className="text-gray-600 dark:text-gray-300">support@kamlaai.com</p>
+                    <p className="text-gray-600 dark:text-gray-300">info@kamla.co.in</p>
                   </div>
                 </div>
                 
