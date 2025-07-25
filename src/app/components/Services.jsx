@@ -15,13 +15,13 @@ import { FiArrowRight, FiCheckCircle } from "react-icons/fi";
 import Link from "next/link";
 
 // Import images
-import img1 from "../assets/img1.jpg";
-import img2 from "../assets/img2.jpg";
-import img3 from "../assets/img3.jpg";
-import img4 from "../assets/img4.jpg";
-import img5 from "../assets/img5.jpg";
-import img6 from "../assets/img6.jpg";
-import img7 from "../assets/img7.jpg";
+// import img1 from "../../../public/F5.png";
+// import img2 from "../assets/img2.jpg";
+// import img3 from "../assets/img3.jpg";
+// import img4 from "../assets/img4.jpg";
+// import img5 from "../assets/img5.jpg";
+// import img6 from "../assets/img6.jpg";
+// import img7 from "../assets/img7.jpg";
 
 const services = [
   {
@@ -34,7 +34,7 @@ const services = [
       "Enterprise Software",
       "API Integration",
     ],
-    image: img1,
+    image: '/img1.jpg',
   },
   {
     id: 2,
@@ -46,7 +46,7 @@ const services = [
       "Link Building",
       "Analytics",
     ],
-    image: img2,
+    image: '/img2.jpg',
   },
   {
     id: 3,
@@ -58,7 +58,7 @@ const services = [
       "Data Storage",
       "Disaster Recovery",
     ],
-    image: img3,
+    image: '/img3.jpg',
   },
   {
     id: 4,
@@ -70,7 +70,7 @@ const services = [
       "Market Research",
       "Workflow Optimization",
     ],
-    image: img4,
+    image: '/img4.jpg',
   },
   {
     id: 5,
@@ -82,14 +82,14 @@ const services = [
       "HR Management",
       "Accounting",
     ],
-    image: img7,
+    image: '/img7.jpg',
   },
   {
     id: 6,
     name: "Game Development",
     description: "Immersive experiences across platforms",
     features: ["2D/3D Games", "AR/VR", "Mobile Games", "Game Design"],
-    image: img6,
+    image: '/img6.jpg',
   },
 ];
 
@@ -98,7 +98,7 @@ const ServiceCard = ({ service }) => {
     <div className="group relative h-full bg-white dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-lg hover:shadow-xl transition-all duration-500">
       {/* Image with gradient overlay */}
       <div className="relative h-48 overflow-hidden">
-        <Image
+        <img
           src={service.image}
           alt={service.name}
           fill

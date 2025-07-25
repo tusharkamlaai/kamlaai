@@ -13,6 +13,7 @@ import {
   FiCheckCircle,
   FiX,
 } from "react-icons/fi";
+import Footer from "../components/Footer";
 
 const CareersPage = () => {
   const form = useRef();
@@ -386,6 +387,7 @@ const CareersPage = () => {
       <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-slate-900 dark:to-slate-800 py-20 px-4 text-center">
         <h1 className="text-[100px]">Coming Soon!</h1>
       </div>
+      <Footer/>
     </>
   );
 };

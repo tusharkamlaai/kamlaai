@@ -65,7 +65,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 w-full h-full">
         <video
           className="w-full h-full object-cover"
-          src='/videos/sideVideo2.mp4'
+          src='/videos/sideVideo3.crdownload'
           autoPlay
           loop
           muted

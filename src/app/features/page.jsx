@@ -3,37 +3,34 @@
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
-import logo1 from "../../../public/assets/F5.png";
-import logo2 from "../../../public/assets/F6.png";
-import logo3 from "../../../public/assets/F7.png";
-import logo4 from "../../../public/assets/F8.webp";
-import Image from "next/image";
+import Footer from "../components/Footer";
+// import Image from "next/image";
 
 
 const features = [
   {
-    icon: logo1,
+    icon: '/F5.png',
     title: "Custom Software Development",
     description:
       "Tailor-made solutions designed to meet your unique business needs and requirements, ensuring optimal functionality and performance.",
     gradient: "from-purple-500 to-pink-500",
   },
   {
-    icon: logo2,
+    icon: '/F6.png',
     title: "User-Friendly Interfaces",
     description:
       "Intuitive and engaging user interfaces that enhance user experience and facilitate ease of use, driving higher adoption and satisfaction.",
     gradient: "from-blue-500 to-cyan-500",
   },
   {
-    icon: logo3,
+    icon: '/F7.png',
     title: "Scalability",
     description:
       "Flexible and scalable software solutions that grow with your business, accommodating increased demand and evolving requirements seamlessly.",
     gradient: "from-green-500 to-teal-500",
   },
   {
-    icon: logo4,
+    icon: '/F8.webp',
     title: "Automated Processes",
     description:
       "Automation of repetitive tasks to increase productivity, reduce errors, and streamline your business processes, freeing up valuable resources.",
@@ -95,10 +92,13 @@ function Feature({ icon, title, description, gradient }) {
         className={`w-24 h-24 mb-6 flex items-center justify-center rounded-2xl bg-gradient-to-br ${gradient} p-1 shadow-lg`}
       >
         <div className="w-full h-full bg-white dark:bg-slate-800 rounded-xl flex items-center justify-center p-3">
-          <Image
+          <img
             src={icon}
             alt={title}
             className="w-full h-full object-contain"
+            width={100}
+            height={100}
+            unoptimized
           />
         </div>
       </div>
@@ -150,7 +150,8 @@ function Features() {
   };
 
   return (
-    <section className="bg-gradient-to-b from-gray-50 to-gray-100 dark:from-slate-900 dark:to-slate-800 py-15 px-4 sm:px-6 lg:px-8">
+    <>
+     <section className="bg-gradient-to-b from-gray-50 to-gray-100 dark:from-slate-900 dark:to-slate-800 py-15 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <motion.div
@@ -196,6 +197,10 @@ function Features() {
         </motion.div>
       </div>
     </section>
+
+    <Footer/>
+    </>
+   
   );
 }
 

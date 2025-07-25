@@ -64,10 +64,18 @@ const Navbar = () => {
   ];
 
   // Check if a link is active
-  const isActive = (href) => {
-    return pathname === href;
-  };
-
+const isActive = (href) => {
+  // Normalize both the href and pathname by removing trailing slashes
+  const normalizedHref = href.replace(/\/+$/, "");
+  const normalizedPathname = pathname.replace(/\/+$/, "");
+  
+  // Special case for home page
+  if (normalizedHref === "") {
+    return normalizedPathname === "";
+  }
+  
+  return normalizedPathname === normalizedHref;
+};
   return (
     <motion.nav
       initial={{ opacity: 0, y: -20 }}
@@ -152,7 +160,7 @@ const Navbar = () => {
                     className={`px-4 dark:text-white py-2 rounded-lg font-medium transition-colors ${
                       isActive(item.href)
                         ? "text-white bg-gradient-to-r from-purple-600 to-pink-500 shadow-md"
-                        : "text-gray-800 hover:text-purple-700 hover:bg-gradient-to-r from-purple-600 to-pink-500"
+                        : "text-gray-800 hover:text-white hover:bg-gradient-to-r from-purple-600 to-pink-500"
                     }`}
                   >
                     {item.name}

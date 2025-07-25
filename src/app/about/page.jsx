@@ -20,6 +20,7 @@ import {
 import Image from "next/image";
 import aboutimg from '../assets/about.jpg'
 import Link from 'next/link'
+import Footer from "../components/Footer";
 
 const AboutPage = () => {
   const features = [
@@ -143,7 +144,8 @@ const AboutPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-slate-900 dark:to-slate-800 py-16 px-4 sm:px-6 lg:px-8">
+    <>
+      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-slate-900 dark:to-slate-800 py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Hero Section */}
         <motion.div
@@ -219,8 +221,8 @@ const AboutPage = () => {
             <div className="relative overflow-hidden rounded-2xl shadow-xl border-4 border-white dark:border-slate-800">
               <div className="aspect-w-16 aspect-h-9 bg-gradient-to-br from-[#FF00FF]/10 to-purple-500/20 h-96 flex items-center justify-center">
                 {/* <FiHome className="text-8xl text-[#FF00FF]/30 dark:text-purple-500/30" /> */}
-                <Image
-                  src={aboutimg}
+                <img
+                  src='/about.jpg'
                  className="w-[40rem] h-[25rem]"
                   alt="Picture of the author"
                 />
@@ -383,11 +385,15 @@ const AboutPage = () => {
             }}
             whileTap={{ scale: 0.98 }}
           >
-        <Link href="contact">Contact Us</Link>   
+        <Link href="/contact">Contact Us</Link>   
           </motion.button>
         </motion.div>
       </div>
     </div>
+
+    <Footer/>
+    </>
+  
   );
 };
 

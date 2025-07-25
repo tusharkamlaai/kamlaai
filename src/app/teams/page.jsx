@@ -5,11 +5,13 @@ import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 import { FiUser, FiCode, FiBriefcase, FiLinkedin, FiGithub, FiMail, FiAward } from 'react-icons/fi';
+import Link from 'next/link'
 
 // Import team photos (replace with your actual image paths)
-import RituPhoto from '../assets/Ritu.jpg';
-import TusharPhoto from '../assets/Tushar.jpeg';
+// import RituPhoto from '../assets/Ritu.jpg';
+// import TusharPhoto from '../assets/Tushar.jpeg';
 import Image from 'next/image';
+import Footer from '../components/Footer';
 
 const TeamPage = () => {
   const teamMembers = [
@@ -17,11 +19,11 @@ const TeamPage = () => {
       name: "Ms. Ritu Patle",
       role: "Executive Director",
       bio: "Ritu Patle is an accomplished MBA graduate with a dual specialization in Finance and Human Resources. With a strong foundation in financial analysis, management, and human capital strategies, Ritu brings a unique blend of analytical acumen and people management skills to the table. Her expertise allows her to seamlessly navigate the complexities of modern organizations by aligning financial goals with HR initiatives.",
-      photo: RituPhoto,
+      photo: '/Ritu.jpg',
       icon: <FiBriefcase className="text-4xl text-[#FF00FF] group-hover:text-white transition-colors duration-300" />,
       social: [
         { icon: <FiLinkedin />, url: "#" },
-        { icon: <FiMail />, url: "#" }
+        { icon: <FiMail />, url: "" }
       ],
       photoPlaceholderColor: "from-purple-400/20 to-pink-400/20" // Gradient for photo placeholder
     },
@@ -29,11 +31,11 @@ const TeamPage = () => {
       name: "Mr. Tushar Patle",
       role: "Sr. Software Development Engineer",
       bio: "Tushar Patle is a skilled Software Development Engineer with more than three years of experience in the field. He is well-versed in programming languages, along with a solid grasp of software development methodologies. Throughout his career, Tushar has actively engaged in various phases of the software development lifecycle, from gathering requirements to coding, testing, and deployment.",
-      photo: TusharPhoto,
+      photo: '/Tushar.jpeg',
       icon: <FiCode className="text-4xl text-[#FF00FF] group-hover:text-white transition-colors duration-300" />,
       social: [
         { icon: <FiLinkedin />, url: "#" },
-        { icon: <FiMail />, url: "#" }
+        { icon: <FiMail />, url: "tushar.kamlaai@gmail.com" }
       ],
       photoPlaceholderColor: "from-blue-400/20 to-cyan-400/20" // Gradient for photo placeholder
     }
@@ -82,7 +84,7 @@ const TeamPage = () => {
               {/* Profile Photo with fallback */}
               <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white dark:border-slate-800 shadow-md">
                 {member.photo ? (
-                  <Image
+                  <img
                     src={member.photo}
                     alt={member.name}
                     width={128}
@@ -131,7 +133,7 @@ const TeamPage = () => {
           </p>
           
           {/* Social Links */}
-          <div className="flex justify-center space-x-4">
+          {/* <div className="flex justify-center space-x-4">
             {member.social.map((social, i) => (
               <motion.a
                 key={i}
@@ -140,17 +142,18 @@ const TeamPage = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
-                {social.icon}
+           <Link href={social.url}> {social.icon}</Link>    
               </motion.a>
             ))}
-          </div>
+          </div> */}
         </div>
       </motion.div>
     );
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-slate-900 dark:to-slate-800 py-16 px-4 sm:px-6 lg:px-8">
+    <>
+      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-slate-900 dark:to-slate-800 py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div 
@@ -280,11 +283,14 @@ const TeamPage = () => {
             }}
             whileTap={{ scale: 0.98 }}
           >
-            View Open Positions
+    <Link href="/career">   View Open Positions</Link>     
           </motion.button>
         </motion.div>
       </div>
     </div>
+    <Footer/>
+    </>
+  
   );
 };
 
